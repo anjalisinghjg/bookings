@@ -1,0 +1,18 @@
+{{template "base" .}}
+
+{{define "context"}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>This is the About page</h1>
+            <p>This came from template: {{index .StringMap "test"}}</p>
+            
+            {{if ne (index .Data "ip") ""}}
+                <h3>Remote IP of user: {{index .Data "ip"}}</h3>
+            {{else}}
+                <h3>Remote IP address is not known. Visit the <a href="/">Home Page</a> to get one.</h3>
+            {{end}}
+        </div>
+    </div>
+</div>
+{{end}}
